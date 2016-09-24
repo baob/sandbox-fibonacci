@@ -1,10 +1,16 @@
 class Fibo
 
+  def initialize(index0: 0, index1: 1)
+    @index = [index0, index1]
+  end
+
   def fibo (n)
-    fibo_tr(n, 0, 1)
+    fibo_tr(n, *index)
   end
 
   private
+
+  attr_reader :index
 
   # Calculate the nth Fibonacci number, f(n). Using invariants
   def fibo_tr(n, acc1, acc2)
