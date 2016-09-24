@@ -15,7 +15,7 @@ class Fibo
   # Calculate the nth Fibonacci number, f(n). Using invariants
   def fibo_tr(n, acc1, acc2)
     if n == 0
-      0
+      acc1
     elsif n < 2
       acc2
     else
