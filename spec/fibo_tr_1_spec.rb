@@ -26,6 +26,12 @@ RSpec.describe Fibo do
     specify { expect(subject.fibo(-3)).to eq(2) }
   end
 
+  describe 'continuity going through 0' do
+    (-7..+7).each do |index|
+      specify { expect(subject.fibo(index + 2)).to eq(subject.fibo(index + 1) + subject.fibo(index)) }
+    end
+  end
+
   context 'index[0] is not 0' do
     subject { described_class.new(index0: 3, index1: 4) }
 
