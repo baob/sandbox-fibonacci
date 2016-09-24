@@ -16,11 +16,14 @@ class Fibo
   def fibo_tr(n, acc1, acc2)
     if n == 0
       acc1
-    elsif n < 2
+    elsif n == 1
       acc2
-    else
+    elsif n > 1
       puts "recursing with: #{[n - 1, acc2, acc2 + acc1].inspect}"
       return fibo_tr(n - 1, acc2, acc2 + acc1)
+    else
+      puts "recursing with: #{[n + 1, acc2, acc1 - acc2].inspect}"
+      return fibo_tr(n + 1, acc2, acc1 - acc2)
     end
   end
 end
