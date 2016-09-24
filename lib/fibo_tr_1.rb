@@ -15,8 +15,10 @@ class Fibo
   # Calculate the nth Fibonacci number, f(n). Using invariants
   def fibo_tr(n, acc1, acc2)
     if n == 0
+      puts "returning acc1"
       acc1
-    elsif n == 1
+    elsif n == 1 || n == -1
+      puts "returning acc2"
       acc2
     elsif n > 1
       puts "recursing with: #{[n - 1, acc2, acc2 + acc1].inspect}"
