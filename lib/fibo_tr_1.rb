@@ -14,18 +14,19 @@ class Fibo
 
   # Calculate the nth Fibonacci number, f(n). Using invariants
   def fibo_tr(n, acc1, acc2)
+    #puts "entering with #{[n, acc1, acc2].inspect}"
     if n == 0
       puts "returning acc1"
       acc1
-    elsif n == 1 || n == -1
+    elsif n == 1
       puts "returning acc2"
       acc2
     elsif n > 1
-      puts "recursing with: #{[n - 1, acc2, acc2 + acc1].inspect}"
+      puts "recursing (+) with: #{[n - 1, acc2, acc2 + acc1].inspect}"
       return fibo_tr(n - 1, acc2, acc2 + acc1)
     else
-      puts "recursing with: #{[n + 1, acc2, acc1 - acc2].inspect}"
-      return fibo_tr(n + 1, acc2, acc1 - acc2)
+      puts "recursing (-) with: #{[n + 1, acc2 - acc1, acc1].inspect}"
+      return fibo_tr(n + 1, acc2 - acc1, acc1)
     end
   end
 end
