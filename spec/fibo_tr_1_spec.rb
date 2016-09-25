@@ -1,7 +1,6 @@
 require_relative '../lib/fibo_tr_1'
 
 RSpec.describe Fibo do
-
   describe 'continuity going through 0' do
     (-7..+7).each do |index|
       specify { expect(subject.fibo(index + 2)).to eq(subject.fibo(index + 1) + subject.fibo(index)) }
